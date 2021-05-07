@@ -1,0 +1,20 @@
+// Import bulma styles
+@import "~bulma";
+
+// Import buefy styles
+@import "~buefy/src/scss/buefy";
+
+/* Base color */
+$base-color: #253746;
+$base-color-dark: black;
+$text-black: #4a4a4a;
+$body-background-color: #e5e5e5;
+
+$primary: #044484;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;

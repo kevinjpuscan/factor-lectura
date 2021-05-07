@@ -1,34 +1,25 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">
-        factor-lectura
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <h1 class="title">Factor Lectura</h1>
+    </div>
+    <div class="form">
+      <RegisterForm />
+    </div>
+    <div class="links">
+      <nuxt-link to="/" class="button--green">Iniciar Prueba</nuxt-link>
+    </div>
+    <div class="links">
+      <nuxt-link to="/" class="button--green">Social</nuxt-link>
+      <nuxt-link to="/" class="button--green">Social</nuxt-link>
+      <nuxt-link to="/" class="button--green">Social</nuxt-link>
+      <nuxt-link to="/" class="button--green">Social</nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style>
@@ -39,19 +30,12 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
