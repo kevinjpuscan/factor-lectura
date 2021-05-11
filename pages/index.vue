@@ -1,57 +1,205 @@
 <template>
   <div class="container">
-    <div>
-      <h1 class="title">Factor Lectura</h1>
-    </div>
-    <div class="form">
-      <RegisterForm />
-    </div>
-    <div class="links">
-      <nuxt-link to="/" class="button--green">Iniciar Prueba</nuxt-link>
-    </div>
-    <div class="links">
-      <nuxt-link to="/" class="button--green">Social</nuxt-link>
-      <nuxt-link to="/" class="button--green">Social</nuxt-link>
-      <nuxt-link to="/" class="button--green">Social</nuxt-link>
-      <nuxt-link to="/" class="button--green">Social</nuxt-link>
-    </div>
+    <section class="header">
+      <h2>UNIVERSIDAD NACIONAL DE CAJAMARCA</h2>
+      <h3>ESCUELA DE POSGRADO</h3>
+      <img :src="require('~/assets/images/unc.png')" alt="unc logo" />
+      <h3>UNIDAD DE POSGRADO DE LA FACULTAD DE EDUCACIÓN</h3>
+      <h3>DOCTORADO EN CIENCIAS MENCION: EDUCACIÓN</h3>
+      <a href="#main" class="link">Empezar</a>
+    </section>
+    <section class="main" id="main">
+      <div v-if="!isRegistered" class="form">
+        <Wrapper>
+          <div class="form-group">
+            <label for="name student">Estudiante:</label>
+            <input v-model="student" class="input-text" type="text" value="" />
+          </div>
+
+          <div class="form-group">
+            <label for="name student">Padre de familia:</label>
+            <input v-model="father" class="input-text" type="text" value="" />
+          </div>
+
+          <div class="form-group">
+            <label for="name student">Grado y Sección:</label>
+            <div class="inline">
+              <select
+                v-model="indexGradoSelected"
+                name="grado"
+                class="input-text"
+                id="grado"
+              >
+                <option
+                  v-for="(grado, index) in grados"
+                  :key="index"
+                  :value="index"
+                >
+                  {{ grado.label }}
+                </option>
+              </select>
+              <select
+                v-model="sectionSelected"
+                name="seccion"
+                class="input-text"
+                id="grado"
+              >
+                <option
+                  v-for="(section, index) in sections"
+                  :key="index"
+                  :value="section"
+                >
+                  {{ section }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <button @click="save" class="btn-main">Registrar</button>
+          </div>
+        </Wrapper>
+      </div>
+
+      <div v-else>
+        <div class="personal-info"></div>
+        <div class="evaluation">
+          <a :href="evaluationLink" class="link-main"> Evaluación </a>
+        </div>
+        <div class="cuestionaries">
+          <a href="/" class="link-secondary"> Encuesta A</a>
+          <a href="/" class="link-secondary"> Encuesta B</a>
+          <a href="/" class="link-secondary"> Encuesta C</a>
+          <a href="/" class="link-secondary"> Encuesta D</a>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-export default {};
+import Wrapper from "@/components/ui/Wrapper";
+import LOCAL_KEYS from "@/constants/localKeys";
+import localStorage from "@/utils/local-storage";
+
+export default {
+  components: { Wrapper },
+  data: () => ({
+    info: {},
+    isRegistered: false,
+    student: "",
+    father: "",
+    grados: [
+      {
+        label: "Primero",
+        sections: ["A", "B", "C"],
+      },
+      {
+        label: "Segundo",
+        sections: ["A", "B"],
+      },
+      {
+        label: "Tercero",
+        sections: ["A", "B"],
+      },
+      {
+        label: "Cuarto",
+        sections: ["A", "B"],
+      },
+      {
+        label: "Quinto",
+        sections: ["A", "B", "C"],
+      },
+    ],
+    indexGradoSelected: 0,
+    sections: ["A", "B", "C"],
+    sectionSelected: "A",
+  }),
+  mounted() {
+    const css = `
+      html {
+        scroll-behavior: smooth;
+      }
+    `;
+    this.styleTag = document.createElement("style");
+    this.styleTag.appendChild(document.createTextNode(css));
+    document.head.appendChild(this.styleTag);
+    this.getPersonData();
+  },
+  destroyed() {
+    this.styleTag.remove();
+  },
+  computed: {
+    evaluationLink() {
+      return "/" + this.grados[Number(this.info.grado) - 1].label.toLowerCase();
+    },
+  },
+  watch: {
+    indexGradoSelected: function (val) {
+      this.sections = this.grados[val].sections;
+    },
+  },
+  methods: {
+    save() {
+      if (!this.student || !this.father) {
+        alert("Completar todos los campos");
+        return;
+      }
+      const info = {
+        estudiante: this.student,
+        padre: this.father,
+        grado: Number(this.indexGradoSelected) + 1,
+        seccion: this.sectionSelected,
+      };
+      this.info = info;
+      localStorage.save(LOCAL_KEYS.PERSON, info);
+      this.isRegistered = true;
+    },
+    getPersonData() {
+      const infoPerson = localStorage.get(LOCAL_KEYS.PERSON);
+      if (infoPerson) {
+        this.isRegistered = true;
+        this.info = infoPerson;
+      }
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.link {
+  color: var(--principal-color);
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.form {
+  width: 100%;
+}
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  .header,
+  .main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    img {
+      max-width: 100px;
+      margin: 1rem 0;
+    }
+  }
+  .main {
+    background: rgb(243, 243, 243);
+  }
 }
 </style>

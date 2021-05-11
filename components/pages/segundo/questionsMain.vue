@@ -3,7 +3,7 @@
     <ContainterQuestions>
       <Wrapper>
         <card-question
-          v-for="(question, index) in this.$store.state.primero.questionsMain"
+          v-for="(question, index) in this.$store.state.segundo.questionsMain"
           class="card"
           :key="index"
         >
@@ -14,30 +14,8 @@
           <alternative-multiple
             :alternatives="question.alternatives"
             :number="question.number"
-            store="primero/selectedOption"
+            store="segundo/selectedOption"
             questionsArray="questionsMain"
-          />
-        </card-question>
-      </Wrapper>
-    </ContainterQuestions>
-    <ImageSection />
-    <ContainterQuestions>
-      <Wrapper>
-        <card-question
-          v-for="(question, index) in this.$store.state.primero
-            .questionsSecondary"
-          class="card"
-          :key="index"
-        >
-          <text-question
-            :number="question.number"
-            :question="question.question"
-          />
-          <alternative-multiple
-            :alternatives="question.alternatives"
-            :number="question.number"
-            store="primero/selectedOption"
-            questionsArray="questionsSecondary"
           />
         </card-question>
       </Wrapper>
@@ -51,9 +29,6 @@ import CardQuestion from "../../shared/CardQuestion";
 import TextQuestion from "../../shared/TextQuestion";
 import AlternativeMultiple from "../../shared/AlternativeMultiple";
 import Wrapper from "../../ui/Wrapper";
-import ImageSection from "./ImageSection";
-import BinaryOption from "../../shared/BinaryOption";
-import OptionText from "../../shared/OptionText";
 
 export default {
   components: {
@@ -62,9 +37,6 @@ export default {
     TextQuestion,
     AlternativeMultiple,
     Wrapper,
-    ImageSection,
-    BinaryOption,
-    OptionText,
   },
 };
 </script>

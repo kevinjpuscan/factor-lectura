@@ -4,13 +4,20 @@
       <div class="question__number">{{ number }}.</div>
       <div>
         <div class="question__question">{{ question }}</div>
-        <div class="question__question"></div>
-        <div v-for="(detail, index) in details" :key="index">
-          {{ detail }}
+        <div class="question__question details">
+          <div v-for="(detail, index) in details" :key="index">
+            {{ detail }}
+          </div>
         </div>
         <div v-if="image" class="question-images">
-          <div class="question__title-image">{{ image.title }}</div>
-          <img :src="`/_nuxt/assets/images/${image.src}`" :alt="image.title" />
+          <div v-if="image.title" class="question__title-image">
+            {{ image.title }}
+          </div>
+          <img
+            class="question__image-image"
+            :src="require(`~/assets/images/${image.src}`)"
+            :alt="image.title"
+          />
         </div>
         <div v-if="description" class="question__question">
           {{ description }}
@@ -65,6 +72,16 @@ export default {
   .question__question {
     font-weight: 400;
     color: rgb(38, 38, 39);
+  }
+
+  .details {
+    margin: 0.8rem 0;
+  }
+  .question-images {
+    width: 100%;
+    .question__image-image {
+      width: 100%;
+    }
   }
   .question__title-image {
     @media only screen and (max-width: 800px) {

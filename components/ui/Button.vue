@@ -41,9 +41,9 @@ export default {
     border: 1px solid var(--principal-color);
   }
   @media only screen and (max-width: 800px) {
-    padding: 1rem 3rem;
+    padding: 0.7rem 2rem;
   }
-  padding: 1.5rem 4.5rem;
+  padding: 1rem 3rem;
   border-radius: 8px;
   background: var(--principal-color);
   border: 1px solid var(--principal-dark);
@@ -51,6 +51,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
 }
 
 .extended {

@@ -1,12 +1,22 @@
 <template>
   <wrapper>
-    <img src="~/assets/images/recibo.png" alt="recibo" class="image" />
+    <img :src="imgFile" :alt="imgName" class="image" />
   </wrapper>
 </template>
 
 <script>
-import Wrapper from "../../ui/Wrapper.vue";
+import Wrapper from "../ui/Wrapper";
 export default {
+  props: {
+    imgFile: {
+      type: String,
+      default: () => "",
+    },
+    imgName: {
+      type: String,
+      default: "",
+    },
+  },
   components: {
     Wrapper,
   },

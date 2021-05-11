@@ -1,4 +1,8 @@
 export default {
+  env: {
+    API_KEY_AIRTABLE: process.env.API_KEY_AIRTABLE,
+    BASE_AIRTABLE: process.env.BASE_AIRTABLE,
+  },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -35,9 +39,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    ['nuxt-buefy', { css: false }]
-  ],
+  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

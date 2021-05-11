@@ -1,7 +1,9 @@
 <template>
   <div>
     <Main />
-    <Questions />
+    <QuestionsMain />
+    <secondary />
+    <QuestionsSecondary />
 
     <Wrapper>
       <div class="actions">
@@ -14,33 +16,27 @@
 </template>
 
 <script>
-import Main from "../components/pages/primero/main";
-import Questions from "../components/pages/primero/questions.vue";
+import Main from "../components/pages/segundo/main";
+import QuestionsMain from "../components/pages/segundo/questionsMain.vue";
 import Button from "../components/ui/Button";
 import Wrapper from "../components/ui/Wrapper";
-
-import localStorage from "@/utils/local-storage";
-import repository from "@/utils/repository";
-import LOCAL_KEYS from "@/constants/localKeys";
+import Secondary from "../components/pages/segundo/secondary";
+import QuestionsSecondary from "../components/pages/segundo/questionsSecondary.vue";
 
 export default {
   components: {
     Main,
-    Questions,
+    QuestionsMain,
     Button,
     Wrapper,
-  },
-  data: () => ({
-    info: {},
-  }),
-  mounted() {
-    this.getInfoPerson();
+    Secondary,
+    QuestionsSecondary,
   },
   computed: {
     questions() {
       return [
-        ...this.$store.state.primero.questionsMain,
-        ...this.$store.state.primero.questionsSecondary,
+        ...this.$store.state.segundo.questionsMain,
+        ...this.$store.state.segundo.questionsSecondary,
       ];
     },
     isDisabled() {
@@ -56,33 +52,14 @@ export default {
     },
   },
   methods: {
-    async save() {
-      const data = this.questions.reduce((field, question) => {
+    save() {
+      const body = this.questions.map((question) => {
+        const field = {};
         field[`pregunta-${question.number}`] = question.selectedOptions;
         return field;
-      }, {});
+      });
 
-      const body = {
-        records: [
-          {
-            fields: {
-              ...this.info,
-              ...data,
-            },
-          },
-        ],
-      };
-      let response = await repository.save("/primero", body);
-      if (response.status === 200) {
-        this.$router.push("/#main");
-      }
-    },
-    getInfoPerson() {
-      const info = localStorage.get(LOCAL_KEYS.PERSON);
-      if (!info) {
-        this.$router.push("/#main");
-      }
-      this.info = info;
+      console.log(body);
     },
   },
 };
