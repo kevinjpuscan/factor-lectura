@@ -51,9 +51,9 @@
       me gustan los amores efímeros.
     </section-text>
 
-    <bibliography
+    <LitleText
       >Tomado de Amara, Luigi (2009). Odio el Twitter. Etiqueta Negra.
-      Recuperado de https://goo.gl/av1L2c</bibliography
+      Recuperado de https://goo.gl/av1L2c</LitleText
     >
     <title-text>Texto B: Odio el Twitter</title-text>
     <image-section
@@ -109,9 +109,9 @@
       auxilio de solitarios que no saben cómo desenchufarse de la Internet.
     </section-text>
 
-    <bibliography
+    <LitleText
       >Tomado de Amara, Luigi (2009). Odio el Twitter. Etiqueta Negra.
-      Recuperado de https://goo.gl/av1L2c</bibliography
+      Recuperado de https://goo.gl/av1L2c</LitleText
     >
   </container-text>
 </template>
@@ -121,7 +121,7 @@ import ContainerText from "../../shared/ContainerText";
 import TitleText from "../../shared/TitleText";
 import ImageSection from "../../shared/ImageSection";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 import Instruction from "../../shared/Instruction";
 
 export default {
@@ -129,7 +129,7 @@ export default {
     ContainerText,
     TitleText,
     SectionText,
-    Bibliography,
+    LitleText,
     ImageSection,
     Instruction,
   },

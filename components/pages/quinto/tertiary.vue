@@ -72,10 +72,10 @@
       riesgosos. Al parecer ignoramos que “Un niño que trabaja pierde más de lo
       que gana”.</section-text
     >
-    <bibliography
+    <LitleText
       >Adaptado de Perú 21 (2015, 12 de junio). Día del Trabajo Infantil: hay
       1,65 millones de menores que trabajan en el Perú. Recuperado de
-      https://goo.gl/l38Llo</bibliography
+      https://goo.gl/l38Llo</LitleText
     >
 
     <image-section
@@ -90,7 +90,7 @@ import ContainerText from "../../shared/ContainerText";
 import TitleText from "../../shared/TitleText";
 import ImageSection from "../../shared/ImageSection";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 import Instruction from "../../shared/Instruction";
 
 export default {
@@ -98,7 +98,7 @@ export default {
     ContainerText,
     TitleText,
     SectionText,
-    Bibliography,
+    LitleText,
     ImageSection,
     Instruction,
   },

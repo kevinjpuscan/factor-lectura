@@ -46,9 +46,9 @@
     </section-text>
 
     <section-text> Claro, ¡son 30 millones! </section-text>
-    <Bibliography
+    <LitleText
       >Tomado de Davelouis, Luis (s/f). Maldito celular. Perú21. Recuperado de
-      https://goo.gl/A1r0hL</Bibliography
+      https://goo.gl/A1r0hL</LitleText
     >
   </container-text>
 </template>
@@ -59,7 +59,7 @@ import TitleText from "../../shared/TitleText";
 import Instruction from "../../shared/Instruction.vue";
 import ImageSection from "../../shared/ImageSection.vue";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 export default {
   components: {
     ContainerText,
@@ -67,7 +67,7 @@ export default {
     Instruction,
     ImageSection,
     SectionText,
-    Bibliography,
+    LitleText,
   },
 };
 </script>

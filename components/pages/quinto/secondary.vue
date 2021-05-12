@@ -9,10 +9,10 @@
       img-name="portabilidad"
     />
 
-    <bibliography
+    <LitleText
       >Tomado de Arauco, Orlando (2016, 6 de enero). La portabilidad en el 2015.
       [Infografía]. La República. Recuperado de
-      http://larepublica.pe/economía/731425-la-portabilidad-en-el-2015</bibliography
+      http://larepublica.pe/economía/731425-la-portabilidad-en-el-2015</LitleText
     >
   </container-text>
 </template>
@@ -22,7 +22,7 @@ import ContainerText from "../../shared/ContainerText";
 import TitleText from "../../shared/TitleText";
 import ImageSection from "../../shared/ImageSection";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 import Instruction from "../../shared/Instruction";
 
 export default {
@@ -30,7 +30,7 @@ export default {
     ContainerText,
     TitleText,
     SectionText,
-    Bibliography,
+    LitleText,
     ImageSection,
     Instruction,
   },

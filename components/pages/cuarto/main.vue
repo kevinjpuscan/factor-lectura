@@ -84,9 +84,9 @@
       esas cosas…</section-text
     >
 
-    <Bibliography
+    <LitleText
       >Tomado de Cortázar, J. (1966). Todos los fuegos el fuego. Recuperado de
-      https://goo.gl/j7XWQz</Bibliography
+      https://goo.gl/j7XWQz</LitleText
     >
   </container-text>
 </template>
@@ -97,7 +97,7 @@ import TitleText from "../../shared/TitleText";
 import Instruction from "../../shared/Instruction.vue";
 import ImageSection from "../../shared/ImageSection.vue";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 export default {
   components: {
     ContainerText,
@@ -105,7 +105,7 @@ export default {
     Instruction,
     ImageSection,
     SectionText,
-    Bibliography,
+    LitleText,
   },
 };
 </script>

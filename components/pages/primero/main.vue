@@ -76,9 +76,9 @@
       pasada de mi imaginación.</section-text
     >
 
-    <Bibliography
+    <LitleText
       >Adaptado de La dama y el viajero (s/f). I Perú. Recuperado de
-      https://goo.gl/twypNa</Bibliography
+      https://goo.gl/twypNa</LitleText
     >
   </container-text>
 </template>
@@ -87,14 +87,14 @@
 import ContainerText from "../../shared/ContainerText";
 import SectionText from "../../shared/SectionText";
 import TitleText from "../../shared/TitleText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 import Instruction from "../../shared/Instruction.vue";
 export default {
   components: {
     ContainerText,
     SectionText,
     TitleText,
-    Bibliography,
+    LitleText,
     Instruction,
   },
 };

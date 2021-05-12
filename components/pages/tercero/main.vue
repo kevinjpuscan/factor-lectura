@@ -13,9 +13,9 @@
       <strong>Miguel</strong>, quien le intentará ayudar para que no lo
       trasladen al piso de impedidos.</section-text
     >
-    <Bibliography
+    <LitleText
       >Tomado de Roca, Paco (2007). Arrugas. Bilbao: Astiberri ediciones.
-      Recuperado de https://goo.gl/aEFA5Q</Bibliography
+      Recuperado de https://goo.gl/aEFA5Q</LitleText
     >
   </container-text>
 </template>
@@ -26,7 +26,7 @@ import TitleText from "../../shared/TitleText";
 import Instruction from "../../shared/Instruction.vue";
 import ImageSection from "../../shared/ImageSection.vue";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 export default {
   components: {
     ContainerText,
@@ -34,7 +34,7 @@ export default {
     Instruction,
     ImageSection,
     SectionText,
-    Bibliography,
+    LitleText,
   },
 };
 </script>

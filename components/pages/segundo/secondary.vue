@@ -76,9 +76,9 @@
       pero efectivos, el fortalecimiento de nuestra ciudadanía; este es un
       problema que no podemos evadir indefinidamente.</section-text
     >
-    <bibliography
+    <LitleText
       >Adaptado de Lerner Febres, Salomón (19 de junio de 2015). Televisión y
-      sociedad. Recuperado dehttps://goo.gl/GaQW24</bibliography
+      sociedad. Recuperado dehttps://goo.gl/GaQW24</LitleText
     >
   </container-text>
 </template>
@@ -88,14 +88,14 @@ import ContainerText from "../../shared/ContainerText";
 import TitleText from "../../shared/TitleText";
 import ImageSection from "../../shared/ImageSection";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 
 export default {
   components: {
     ContainerText,
     TitleText,
     SectionText,
-    Bibliography,
+    LitleText,
     ImageSection,
   },
 };

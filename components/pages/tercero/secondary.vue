@@ -60,9 +60,9 @@
       desempleo, etc.</section-text
     >
 
-    <bibliography
+    <LitleText
       >Tomado de El subrayado y el parafraseo. (s/f). Universidad Cesar Vallejo.
-      Recuperado de https://goo.gl/v4LMJm</bibliography
+      Recuperado de https://goo.gl/v4LMJm</LitleText
     >
   </container-text>
 </template>
@@ -72,15 +72,15 @@ import ContainerText from "../../shared/ContainerText";
 import TitleText from "../../shared/TitleText";
 import ImageSection from "../../shared/ImageSection";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "@/components/shared/Bibliography";
+import LitleText from "../../shared/LitleText";
 
 export default {
   components: {
     ContainerText,
     TitleText,
     SectionText,
-    Bibliography,
     ImageSection,
+    LitleText,
   },
 };
 </script>
