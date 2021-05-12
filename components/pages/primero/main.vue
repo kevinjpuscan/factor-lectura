@@ -87,7 +87,7 @@
 import ContainerText from "../../shared/ContainerText";
 import SectionText from "../../shared/SectionText";
 import TitleText from "../../shared/TitleText";
-import Bibliography from "../../shared/BIbliography";
+import Bibliography from "../../shared/Bibliography";
 import Instruction from "../../shared/Instruction.vue";
 export default {
   components: {

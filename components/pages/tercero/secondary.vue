@@ -72,7 +72,7 @@ import ContainerText from "../../shared/ContainerText";
 import TitleText from "../../shared/TitleText";
 import ImageSection from "../../shared/ImageSection";
 import SectionText from "../../shared/SectionText";
-import Bibliography from "../../shared/Bibliography";
+import Bibliography from "@/components/shared/Bibliography";
 
 export default {
   components: {
