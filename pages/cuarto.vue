@@ -23,6 +23,10 @@ import Wrapper from "../components/ui/Wrapper";
 import Secondary from "../components/pages/cuarto/secondary";
 import QuestionsSecondary from "../components/pages/cuarto/questionsSecondary.vue";
 
+import localStorage from "@/utils/local-storage";
+import repository from "@/utils/repository";
+import LOCAL_KEYS from "@/constants/localKeys";
+
 export default {
   components: {
     Main,
@@ -31,6 +35,13 @@ export default {
     Wrapper,
     Secondary,
     QuestionsSecondary,
+  },
+  data: () => ({
+    info: {},
+    loading: false,
+  }),
+  mounted() {
+    this.getInfoPerson();
   },
   computed: {
     questions() {
@@ -48,18 +59,39 @@ export default {
         }
       });
 
-      return disabled;
+      return disabled || this.loading;
     },
   },
   methods: {
-    save() {
-      const body = this.questions.map((question) => {
-        const field = {};
+    async save() {
+      this.loading = true;
+      const data = this.questions.reduce((field, question) => {
         field[`pregunta-${question.number}`] = question.selectedOptions;
         return field;
-      });
+      }, {});
 
-      console.log(body);
+      const body = {
+        records: [
+          {
+            fields: {
+              ...this.info,
+              ...data,
+            },
+          },
+        ],
+      };
+      let response = await repository.save("/cuarto", body);
+      this.loading = false;
+      if (response.status === 200) {
+        this.$router.push("/#main");
+      }
+    },
+    getInfoPerson() {
+      const info = localStorage.get(LOCAL_KEYS.PERSON);
+      if (!info) {
+        this.$router.push("/#main");
+      }
+      this.info = info;
     },
   },
 };

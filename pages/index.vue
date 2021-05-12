@@ -71,6 +71,10 @@
           <a href="/" class="link-secondary"> Encuesta C</a>
           <a href="/" class="link-secondary"> Encuesta D</a>
         </div>
+
+        <div>
+          <button v-if="isTestMode" @click="cleanInfo">Limpiar</button>
+        </div>
       </div>
     </section>
   </div>
@@ -132,6 +136,15 @@ export default {
     evaluationLink() {
       return "/" + this.grados[Number(this.info.grado) - 1].label.toLowerCase();
     },
+    isTestMode() {
+      if (!this.info.estudiante) {
+        return false;
+      }
+      if (this.info.estudiante === "test") {
+        return true;
+      }
+      return false;
+    },
   },
   watch: {
     indexGradoSelected: function (val) {
@@ -160,6 +173,10 @@ export default {
         this.isRegistered = true;
         this.info = infoPerson;
       }
+    },
+    cleanInfo() {
+      this.info = {};
+      this.isRegistered = false;
     },
   },
 };

@@ -1,7 +1,11 @@
 <template>
   <div>
     <Main />
-    <Questions />
+    <QuestionsMain />
+    <secondary />
+    <QuestionsSecondary />
+    <Tertiary />
+    <QuestionsTertiary />
 
     <Wrapper>
       <div class="actions">
@@ -14,10 +18,14 @@
 </template>
 
 <script>
-import Main from "../components/pages/primero/main";
-import Questions from "../components/pages/primero/questions.vue";
+import Main from "../components/pages/quinto/main";
+import QuestionsMain from "../components/pages/quinto/questionsMain.vue";
 import Button from "../components/ui/Button";
 import Wrapper from "../components/ui/Wrapper";
+import Secondary from "../components/pages/quinto/secondary";
+import QuestionsSecondary from "../components/pages/quinto/questionsSecondary.vue";
+import Tertiary from "../components/pages/quinto/tertiary";
+import QuestionsTertiary from "../components/pages/quinto/questionsTertiary";
 
 import localStorage from "@/utils/local-storage";
 import repository from "@/utils/repository";
@@ -26,9 +34,13 @@ import LOCAL_KEYS from "@/constants/localKeys";
 export default {
   components: {
     Main,
-    Questions,
+    QuestionsMain,
     Button,
     Wrapper,
+    Secondary,
+    QuestionsSecondary,
+    Tertiary,
+    QuestionsTertiary,
   },
   data: () => ({
     info: {},
@@ -40,8 +52,9 @@ export default {
   computed: {
     questions() {
       return [
-        ...this.$store.state.primero.questionsMain,
-        ...this.$store.state.primero.questionsSecondary,
+        ...this.$store.state.quinto.questionsMain,
+        ...this.$store.state.quinto.questionsSecondary,
+        ...this.$store.state.quinto.questionsTertiary,
       ];
     },
     isDisabled() {
@@ -74,7 +87,7 @@ export default {
           },
         ],
       };
-      let response = await repository.save("/primero", body);
+      let response = await repository.save("/quinto", body);
       this.loading = false;
       if (response.status === 200) {
         this.$router.push("/#main");
