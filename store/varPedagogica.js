@@ -70,6 +70,36 @@ export const state = () => ({
       ],
       selectedOptions: "",
     },
+    {
+      number: "8",
+      question:
+        "Después de la lectura, ¿el docente te orienta que realices un resumen, organizador gráfico, cuestionario, opinión crítica, entre otros sobre el tema leído?",
+      alternatives: [
+        { option: "SI", label: "SI" },
+        { option: "NO", label: "NO" },
+      ],
+      selectedOptions: "",
+    },
+    {
+      number: "9",
+      question:
+        "¿Después de la lectura, el docente te entrega una ficha para verificar si has comprendido o no sobre el tema o lectura tratada?",
+      alternatives: [
+        { option: "SI", label: "SI" },
+        { option: "NO", label: "NO" },
+      ],
+      selectedOptions: "",
+    },
+    {
+      number: "10",
+      question:
+        "Para promover la lectura fuera del aula, ¿tu docente te propone algunas estrategias como: La maleta viajera, Préstamo de libros, la noticia del día, el mejor informativo del aula, entre otros?",
+      alternatives: [
+        { option: "SI", label: "SI" },
+        { option: "NO", label: "NO" },
+      ],
+      selectedOptions: "",
+    },
   ],
 })
 
