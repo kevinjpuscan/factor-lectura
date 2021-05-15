@@ -123,7 +123,7 @@ export const state = () => ({
     },
     {
       number: "9",
-      question: "El texto leído es",
+      question: "El texto leído es:",
       alternatives: [
         { option: "A", label: "Continuo" },
         { option: "B", label: "Discontinuo" },

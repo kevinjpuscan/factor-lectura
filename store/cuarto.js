@@ -13,7 +13,7 @@ export const state = () => ({
     },
     {
       number: "2",
-      question: "Indica el orden en que ocurren los sucesos en el texto.",
+      question: "Indica el orden en que ocurren los sucesos en el texto:",
       details: ['I. La enfermera no deja a la madre quedarse con el nene.',
         'II. El nene es internado en la clínica.',
         'III. La enfermera trajo el termómetro y el nene se puso rojo.',
@@ -102,7 +102,7 @@ export const state = () => ({
   questionsSecondary: [
     {
       number: "9",
-      question: "A partir de la información brindada por los textos leídos, selecciona la alternativa que presenta ideas opuestas.",
+      question: "A partir de la información brindada por los textos leídos, selecciona la alternativa que presenta ideas opuestas:",
       alternatives: [
         { option: "A", label: "Me gusta el Twitter porque es la dictadura de la brevedad. No me gusta el Twitter porque ofrece un nuevo pretexto para el aislamiento. " },
         { option: "B", label: "Adoro el Twitter porque adoro las paradojas. Odio el Twitter porque nadie hace lo que dice en su afán por escribirlo. " },

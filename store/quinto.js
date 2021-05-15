@@ -168,7 +168,7 @@ export const state = () => ({
     },
     {
       number: "14",
-      question: "Lee el siguiente fragmento",
+      question: "Lee el siguiente fragmento:",
       image: {
         src: "frase-7.png"
       },
@@ -183,7 +183,7 @@ export const state = () => ({
     },
     {
       number: "15",
-      question: "Contrasta la siguiente información y luego responde la pregunta",
+      question: "Contrasta la siguiente información y luego responde la pregunta:",
       image: {
         src: "chart-ninios.png",
       },

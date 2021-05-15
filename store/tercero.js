@@ -140,7 +140,7 @@ export const state = () => ({
     },
     {
       number: "12",
-      question: "En la expresión: El comercio ambulatorio es un problema latente en nuestra sociedad y se da no solo en la capital sino en las principales ciudades de nuestro país. Esta afirmación no lleva a concluir ",
+      question: "En la expresión: El comercio ambulatorio es un problema latente en nuestra sociedad y se da no solo en la capital sino en las principales ciudades de nuestro país. Esta afirmación no lleva a concluir:",
       alternatives: [
         { option: "A", label: "El comercio ambulatorio es una actividad formal que se realiza en la vía publica" },
         { option: "B", label: "El comercio ambulatorio es una actividad informal que se da en la vía pública" },

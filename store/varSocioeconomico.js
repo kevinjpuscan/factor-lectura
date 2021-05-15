@@ -59,7 +59,7 @@ export const state = () => ({
     },
     {
       number: "6",
-      question: "El material predominante en las paredes de su vivienda es",
+      question: "El material predominante en las paredes de su vivienda es:",
       alternatives: [
         { option: "A", label: "Ladrillo o bloque de cemento." },
         { option: "B", label: "Piedra con barro." },
@@ -71,7 +71,7 @@ export const state = () => ({
     },
     {
       number: "7",
-      question: "El material predominante en los pisos de su vivienda es",
+      question: "El material predominante en los pisos de su vivienda es:",
       alternatives: [
         { option: "A", label: "Parquet o madera pulida." },
         { option: "B", label: "Loseta o cerámica." },
@@ -107,7 +107,7 @@ export const state = () => ({
     },
     {
       number: "10",
-      question: "¿Cuál es el tipo de alumbrado que tiene en su hogar:",
+      question: "¿Cuál es la fuente de alumbrado que tiene en su hogar:",
       alternatives: [
         { option: "A", label: "Electricidad." },
         { option: "B", label: "Gas." },
@@ -143,7 +143,7 @@ export const state = () => ({
     },
     {
       number: "13",
-      question: "Cuenta con teléfono móvil, ¿de qué operador?",
+      question: "Su teléfono móvil, ¿de qué operador?",
       alternatives: [
         { option: "A", label: "Movistar" },
         { option: "B", label: "Claro" },

@@ -5,6 +5,9 @@ export default {
     const plainValue = JSON.stringify(value);
     storage.setItem(key, plainValue);
   },
+  clear(key) {
+    storage.removeItem(key);
+  },
   get(key) {
     const value = storage.getItem(key);
     if (!value) {
