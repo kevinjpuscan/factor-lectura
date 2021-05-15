@@ -1,8 +1,44 @@
 <template>
   <div>
-    <input class="text" type="text" placeholder="Escribe tu respuesta" />
+    <input
+      class="text"
+      type="text"
+      placeholder="Escribe tu respuesta"
+      v-model="optionSelected"
+    />
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    number: {
+      type: String,
+      default: "0",
+    },
+    store: {
+      type: String,
+      default: "",
+    },
+    questionsArray: {
+      type: String,
+      default: "",
+    },
+  },
+  data: () => ({
+    optionSelected: "",
+  }),
+  watch: {
+    optionSelected(val) {
+      this.$store.commit(this.store, {
+        number: this.number,
+        option: val,
+        questionsArray: this.questionsArray,
+      });
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .text {

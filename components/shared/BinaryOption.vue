@@ -24,6 +24,18 @@ export default {
         { option: "NO", label: "NO" },
       ],
     },
+    number: {
+      type: String,
+      default: "0",
+    },
+    store: {
+      type: String,
+      default: "",
+    },
+    questionsArray: {
+      type: String,
+      default: "",
+    },
   },
   data: () => ({
     optionSelected: "",
@@ -41,6 +53,11 @@ export default {
   methods: {
     selectOption(option) {
       this.optionSelected = option;
+      this.$store.commit(this.store, {
+        number: this.number,
+        option,
+        questionsArray: this.questionsArray,
+      });
     },
   },
 };

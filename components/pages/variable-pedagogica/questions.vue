@@ -3,7 +3,8 @@
     <ContainterQuestions>
       <Wrapper>
         <card-question
-          v-for="(question, index) in questionsMain"
+          v-for="(question, index) in this.$store.state.varPedagogica
+            .questionsMain"
           class="card"
           :key="index"
         >
@@ -11,7 +12,12 @@
             :number="question.number"
             :question="question.question"
           />
-          <BinaryOption :alternatives="question.alternatives" />
+          <BinaryOption
+            :alternatives="question.alternatives"
+            :number="question.number"
+            store="varPedagogica/selectedOption"
+            questionsArray="questionsMain"
+          />
         </card-question>
       </Wrapper>
     </ContainterQuestions>

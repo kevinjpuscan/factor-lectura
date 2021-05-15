@@ -66,10 +66,18 @@
           <a :href="evaluationLink" class="link-main"> Evaluación </a>
         </div>
         <div class="cuestionaries">
-          <a href="/" class="link-secondary"> Encuesta A</a>
-          <a href="/" class="link-secondary"> Encuesta B</a>
-          <a href="/" class="link-secondary"> Encuesta C</a>
-          <a href="/" class="link-secondary"> Encuesta D</a>
+          <a href="/variable-ambiental" class="link-secondary">
+            Variable Ambiental</a
+          >
+          <a href="/variable-cultural" class="link-secondary">
+            Variable Cultural</a
+          >
+          <a href="/variable-socioeconomico" class="link-secondary">
+            Variable Socieconómico</a
+          >
+          <a href="/variable-pedagogica" class="link-secondary">
+            Variable Pedagógica</a
+          >
         </div>
 
         <div>

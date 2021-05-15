@@ -185,7 +185,6 @@ export const state = () => ({
       number: "15",
       question: "Contrasta la siguiente información y luego responde la pregunta",
       image: {
-        title: 'Porcentaje de niños que trabajan entre 5 y 17 años',
         src: "chart-ninios.png",
       },
       description: '¿Crees que la información presentada en ambos textos ayuda a entender la razón por la cual los menores entre 5 y 17 años trabajan?  Escoge una idea que fundamenta tu respuesta.',

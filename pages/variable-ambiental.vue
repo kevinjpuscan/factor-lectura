@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Questions />
+    <QuestionsMain />
     <Wrapper>
       <div class="actions">
         <Button extended :disabled="isDisabled" @click="save"
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Questions from "../components/pages/variable-pedagogica/questions";
+import QuestionsMain from "../components/pages/variable-ambiental/questionsMain";
 import Button from "../components/ui/Button";
 import Wrapper from "../components/ui/Wrapper";
 
@@ -22,7 +22,7 @@ import LOCAL_KEYS from "@/constants/localKeys";
 
 export default {
   components: {
-    Questions,
+    QuestionsMain,
     Wrapper,
     Button,
   },
@@ -35,7 +35,10 @@ export default {
   },
   computed: {
     questions() {
-      return [...this.$store.state.varPedagogica.questionsMain, ,];
+      return [
+        ...this.$store.state.varAmbiental.questionsMain,
+        ...this.$store.state.varAmbiental.questionsSecondary,
+      ];
     },
     isDisabled() {
       let disabled = false;
@@ -67,7 +70,7 @@ export default {
           },
         ],
       };
-      let response = await repository.save("/var-pedagogica", body);
+      let response = await repository.save("/var-ambiental", body);
       this.loading = false;
       if (response.status === 200) {
         this.$router.push("/#main");
