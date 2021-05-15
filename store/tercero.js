@@ -64,7 +64,7 @@ export const state = () => ({
     },
     {
       number: "6",
-      question: "6.	Se evidencia que una persona está con alzhéimer cuando:",
+      question: "Se evidencia que una persona está con alzhéimer cuando:",
 
       alternatives: [
         { option: "A", label: "Se observa la recuperación de la memoria a largo plazo." },
