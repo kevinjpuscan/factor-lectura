@@ -9,8 +9,19 @@
       <a href="#main" class="link">Empezar</a>
     </section>
     <section class="main" id="main">
+      <div class="instruction-main">
+
+      </div>
       <div v-if="!isRegistered" class="form">
         <Wrapper>
+                  <IndicationMain>
+          <h2>INDICACIONES</h2>
+          <p>Estimados estudiantes para iniciar este proceso debes seguir los siguientes pasos:</p>
+          <p><strong>Primero:</strong>  Escribir tu nombre y apellidos </p>
+          <p> <strong>Segundo:</strong>  Escribir el nombre y apellidos del padres o madre quien responderá las encuestas.</p>
+          <p> <strong>Tercero:</strong>  Seleccionar el grado y sección que te encuentras en este año.</p>
+          <p> <strong>Cuarto:</strong>  Presiona <strong>registrar</strong> </p>
+        </IndicationMain>
           <div class="form-group">
             <label for="name student">Estudiante:</label>
             <input v-model="student" class="input-text" type="text" value="" />
@@ -61,7 +72,14 @@
       </div>
 
       <div v-else>
-        <div class="personal-info"></div>
+        <Wrapper>
+                          <IndicationMain>
+                            <h2>INDICACIONES</h2>
+          <h3> <strong>Estimado estudiante:</strong> </h3>
+          <p>Ahora, solamente resolverás la <strong>evaluación</strong>  que consta de 15 preguntas y la <strong>variable pedagógica</strong>  que consta de 10 preguntas, una vez concluido marcando todas las respuestas correspondientes en cada caso, presionar <strong>enviar respuesta.</strong>. </p>
+          <h3> <strong>Estimado padre, madre o apoderado:</strong></h3>
+          <p> Usted ingresará en las encuestas de la <strong>variable ambiental, cultural y socioeconómica</strong>  donde tiene que marcar una de las respuestas en cada pregunta o en otros casos deberá escribir su repuesta, una vez concluido presionar <strong>enviar respuesta.</strong> </p>
+        </IndicationMain>
         <div class="evaluation">
           <a :href="evaluationLink" class="link-main"> Evaluación </a>
         </div>
@@ -83,6 +101,7 @@
         <div>
           <button v-if="isTestMode" @click="cleanInfo">Limpiar</button>
         </div>
+        </Wrapper>
       </div>
     </section>
   </div>
@@ -92,9 +111,10 @@
 import Wrapper from "@/components/ui/Wrapper";
 import LOCAL_KEYS from "@/constants/localKeys";
 import localStorage from "@/utils/local-storage";
+import IndicationMain from '@/components/shared/IndicationMain';
 
 export default {
-  components: { Wrapper },
+  components: { Wrapper, IndicationMain },
   data: () => ({
     info: {},
     isRegistered: false,
